@@ -1,0 +1,14 @@
+moviepy
+typing
+pydub
+librosa
+numpy
+parsivar
+perke
+os
+io
+pathlib
+select
+shutil
+subprocess
+sys
