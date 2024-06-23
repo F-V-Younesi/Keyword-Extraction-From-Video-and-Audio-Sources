@@ -18,6 +18,8 @@ Speech To Text(STT)<br>
 
 Spelling Correcting <br>
 
+Query Finding <br>
+
 Caption Modification(remove id, tags, emojis,..)<br>
 
 keywords extraction<br>
