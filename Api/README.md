@@ -5,7 +5,6 @@
  * [templates](./templates)
    * [index.html](./templates/index.html)
  * [AudioKeys.py](./AudioKeys.py)
- * [README.md](./README.md)
  * [requirements](./requirements)
 
 As shown above, the directory with files and folders with same names must be created.
