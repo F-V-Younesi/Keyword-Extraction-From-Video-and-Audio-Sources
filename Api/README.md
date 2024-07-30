@@ -12,6 +12,7 @@ As shown above, the directory with files and folders with same names must be cre
 **First: install necessary packages:**
 ```
 !pip install -r requirements.txt
+# or in conda: conda install --yes --file requirements.txt
 !pip install git+https://github.com/openai/whisper.git
 !python -m perke download
 !python3 -m pip install -U git+https://github.com/facebookresearch/demucs#egg=demucs
