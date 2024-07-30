@@ -1,5 +1,5 @@
 #@@@@ first install bellow packages: @@@@
-# !pip install -r requirements.txt
+# !pip install -r requirements.txt  | conda install --yes --file requirements.txt
 # !pip install git+https://github.com/openai/whisper.git
 # !python -m perke download
 # !python3 -m pip install -U git+https://github.com/facebookresearch/demucs#egg=demucs
