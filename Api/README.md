@@ -63,3 +63,15 @@ if __name__ =='__main__':
 	app.run(debug = True)
 ```
 
+$ ./tree-md .
+# Project tree
+
+.
+ * [tree-md](./tree-md)
+ * [static](./static)
+   * [file21.ext](./dir2/file21.ext)
+ * [templates](./templates)
+   * [index.html](./templates/index.html)
+ * [AudioKeys.py](./AudioKeys.py)
+ * [README.md](./README.md)
+ * [requirements](./requirements)
