@@ -33,7 +33,8 @@ from AudioKeys import *
 
 **Third: make following directory in local path of "parsivar package" then download and copy onegram.pckl & mybigram_lm.pckl models in this directoy. this stage must be done "after importing libraries":**
 ```
-!mkdir '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'  #change this with your parsivar installed path
+#Making "spell" folder in "parsivar/resource" path:
+!mkdir '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell' #change this with your parsivar installed path
 !cp 'onegram.pckl' '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
 !cp 'mybigram_lm.pckl' '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
 ```
