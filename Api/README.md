@@ -1,3 +1,16 @@
+
+# Project tree
+
+ * [static](./static)
+   * [file21.ext](./dir2/file21.ext)
+ * [templates](./templates)
+   * [index.html](./templates/index.html)
+ * [AudioKeys.py](./AudioKeys.py)
+ * [README.md](./README.md)
+ * [requirements](./requirements)
+
+As shown above, the directory with files and folders with same names must be created.
+
 **First: install necessary packages:**
 ```
 !pip install -r requirements.txt
@@ -62,16 +75,3 @@ if __name__ =='__main__':
 	# app.debug = True
 	app.run(debug = True)
 ```
-
-# Project tree
-
- * [tree-md](./tree-md)
- * [static](./static)
-   * [file21.ext](./dir2/file21.ext)
- * [templates](./templates)
-   * [index.html](./templates/index.html)
- * [AudioKeys.py](./AudioKeys.py)
- * [README.md](./README.md)
- * [requirements](./requirements)
-
-
