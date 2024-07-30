@@ -63,10 +63,8 @@ if __name__ =='__main__':
 	app.run(debug = True)
 ```
 
-$ ./tree-md .
 # Project tree
 
-.
  * [tree-md](./tree-md)
  * [static](./static)
    * [file21.ext](./dir2/file21.ext)
@@ -77,16 +75,3 @@ $ ./tree-md .
  * [requirements](./requirements)
 
 
-
-├── dir1
-│   ├── file11.ext
-│   └── file12.ext
-├── dir2
-│   ├── file21.ext
-│   ├── file22.ext
-│   └── file23.ext
-├── dir3
-├── file_in_root.ext
-└── README.md
-
-2 directories, 5 files
