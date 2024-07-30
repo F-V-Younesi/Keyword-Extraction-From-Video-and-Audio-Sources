@@ -2,7 +2,6 @@
 # Project tree
 
  * [static](./static)
-   * [file21.ext](./dir2/file21.ext)
  * [templates](./templates)
    * [index.html](./templates/index.html)
  * [AudioKeys.py](./AudioKeys.py)
