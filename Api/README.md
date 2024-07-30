@@ -31,9 +31,9 @@ from flask import Flask, render_template, request
 from AudioKeys import *
 ```
 
-Third: make following directory in local then download and copy onegram.pckl & mybigram_lm.pckl files in this directoy. this stage must be done after importing libraries:
+Third: make following directory in local path of "parsivar package" then download and copy onegram.pckl & mybigram_lm.pckl models in this directoy. this stage must be done "after importing libraries":
 ```
-!mkdir '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
+!mkdir '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'  #change this with your parsivar installed path
 !cp 'onegram.pckl' '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
 !cp 'mybigram_lm.pckl' '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
 ```
