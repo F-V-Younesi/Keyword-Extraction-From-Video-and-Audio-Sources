@@ -75,3 +75,18 @@ $ ./tree-md .
  * [AudioKeys.py](./AudioKeys.py)
  * [README.md](./README.md)
  * [requirements](./requirements)
+
+
+
+├── dir1
+│   ├── file11.ext
+│   └── file12.ext
+├── dir2
+│   ├── file21.ext
+│   ├── file22.ext
+│   └── file23.ext
+├── dir3
+├── file_in_root.ext
+└── README.md
+
+2 directories, 5 files
