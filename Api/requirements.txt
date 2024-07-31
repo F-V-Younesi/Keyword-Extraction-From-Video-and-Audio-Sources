@@ -7,9 +7,6 @@ parsivar==0.2.3.1
 perke==0.4.4
 pathlib==1.0.1
 typing
-os
-io
 select
 shutil
 subprocess
-sys
