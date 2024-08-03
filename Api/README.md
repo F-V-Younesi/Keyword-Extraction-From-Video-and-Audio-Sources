@@ -16,6 +16,9 @@ As shown above, the directory with files and folders with same names must be cre
 !pip install git+https://github.com/openai/whisper.git
 !python -m perke download
 !python3 -m pip install -U git+https://github.com/facebookresearch/demucs#egg=demucs
+
+#only in conda environment it is necessary to run:
+!conda install conda-forge::ffmpeg
 ```
 
 **Second: Importing Libraries:**
