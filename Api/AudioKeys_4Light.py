@@ -1,26 +1,3 @@
-import moviepy.editor
-import io,os
-# from pathlib import Path
-# import select
-# import subprocess as sp
-# import sys
-# from typing import Dict, Tuple, Optional, IO
-# from pydub import AudioSegment, silence
-# import librosa #, numpy as np
-from parsivar import SpellCheck
-import whisper
-import numpy as np
-# import shutil
-import re
-def dummy_npwarn_decorator_factory():
-  def npwarn_decorator(x):
-    return x
-  return npwarn_decorator
-np._no_nep50_warning = getattr(np, '_no_nep50_warning', dummy_npwarn_decorator_factory)
-from perke.unsupervised.graph_based import TopicRank
-#from flask import Flask, render_template, request
-#from whispermodel import *
-
 
 #functions:
 #this function Investigate that the input file is audio or video or None of them:
@@ -47,8 +24,6 @@ def vid2audio(path):
 
   #Export the Audio
   audio.write_audiofile("data/Audio.mp3")
-
-#music Separation functions:
 
 
 def phrase2txt(resultl):
@@ -90,29 +65,6 @@ def predict(path,caption):
       path="data/Audio.mp3"
     elif video is False:
       os.rename(path,'data/Audio.mp3')
-    # if os.path.exists('data/Audio.mp3'):
-    #   print('**Start of the operation to check the presence of music in the audio file:\n')
-    #   # !python3 -m pip install -U git+https://github.com/facebookresearch/demucs#egg=demucs
-    #   model = "htdemucs"
-    #   two_stems = None   # only separate one stems from the rest, for instance
-    #   # two_stems = "vocals"
-    #   # Options for the output audio:
-    #   mp3 = True
-    #   mp3_rate = 320
-    #   float32 = False  # output as float 32 wavs, unsused if 'mp3' is True.
-    #   int24 = False    # output as int24 wavs, unused if 'mp3' is True.
-    #   in_path = '/content/demucs'
-    #   out_path = '/content/demucs_separated/'
-    #   remove_music()
-    #   # !zip -r separated.zip separated
-
-      # music1=AudioSegment.from_mp3('data/separated/htdemucs/Audio/bass.mp3')
-      # music2=AudioSegment.from_mp3('data/separated/htdemucs/Audio/drums.mp3')
-      # music3=AudioSegment.from_mp3('data/separated/htdemucs/Audio/other.mp3')
-      # vocal=AudioSegment.from_mp3('data/separated/htdemucs/Audio/vocals.mp3')
-      # overlay_music = music1.overlay(music2, position=0).overlay(music3, position=0)
-      # overlay_music.export('data/music.mp3',format='mp3')
-      # useful_content=music_mode(overlay_music,'data/music.mp3',vocal)
 
       modell = whisper.load_model("large")
       audio_path='data/Audio.mp3'
@@ -120,10 +72,6 @@ def predict(path,caption):
         print('**Start of the STT operation:\n')
         resultl = modell.transcribe(audio_path)
       main_content=phrase2txt(resultl)
-
-      # checker=SpellCheck()
-      # corrected_text=checker.spell_corrector(main_content)
-      # print('This is the main content of Input video/Audio:\n',corrected_text)
 
       tags, without_tag = pure_caption(caption)
       goal_text = without_tag + main_content
