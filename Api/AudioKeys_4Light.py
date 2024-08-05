@@ -94,5 +94,5 @@ def predict(path,caption):
       output_massage='!! Your input file is not Audio or Video. Please submit a video/audio file. !!'
       return output_massage
 
-caption = "دوستانی که میگن شاه خودش رفت به اون جمله فرار کرد هم توجه داشته باشند "
-predict('/home/younesi/data/audio.mp3',caption)
+#caption = "دوستانی که میگن شاه خودش رفت به اون جمله فرار کرد هم توجه داشته باشند "
+#predict('/home/younesi/data/audio.mp3',caption)
