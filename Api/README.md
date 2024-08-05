@@ -60,12 +60,13 @@ from AudioKeys import *
 ```
 As said in the comment above, replace "AudioKeys" name with api code version name, such as "AudioKeys_5M"
 
-**Versions:
-1. 6Gold_spleeter_mp3 : The best model(in accuracy) for the case where the presence of useful content and music in the input is not known.
-2. 5Gold_spleeter : The best model(in accuracy) for the case where the presence of music in the input is not known but we know that inuputs certainly have useful contents, for example: Audio of lectures or meetings.
-3. 5Medium : The best model(in accuracy) for the case where the presence of useful content in the input is known and input has not music in background. also can use for upper cases with less accuracy but faster implementation.
-4. 4Light : good for all of cases, but has lowest accuracy but fastest in implemetation.
-**
+**Versions:**
+1. **6Gold_spleeter_mp3** : The best model(in accuracy) for the case where the presence of useful content and music in the input is not known.
+2. **5Gold_spleeter** : The best model(in accuracy) for the case where the presence of music in the input is not known but we know that inuputs certainly have useful contents, for example: Audio of lectures or meetings.
+3. **5Medium** : The best model(in accuracy) for the case where the presence of useful content in the input is known and input has not music in background. also can use for upper cases with less accuracy but faster implementation.
+4. **4Light** : good for all of cases, but has lowest accuracy but fastest in implemetation.
+
+
 and then run app:
 ```
 app = Flask(__name__)
