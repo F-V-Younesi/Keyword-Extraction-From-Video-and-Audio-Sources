@@ -261,5 +261,5 @@ def predict(path,caption):
         return output_massage
     
     
-caption = "دوستانی که میگن شاه خودش رفت به اون جمله فرار کرد هم توجه داشته باشند "
-predict('/home/younesi/data/audio.mp3',caption)
+#caption = "دوستانی که میگن شاه خودش رفت به اون جمله فرار کرد هم توجه داشته باشند "
+#predict('/home/younesi/data/audio.mp3',caption)
