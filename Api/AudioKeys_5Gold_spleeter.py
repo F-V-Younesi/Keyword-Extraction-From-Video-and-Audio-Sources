@@ -144,7 +144,7 @@ def predict(path,caption):
     elif video is False:
       os.rename(path,'data/Audio.mp3')
     if os.path.exists('data/Audio.mp3'):
-      print('**Start of the operation to check the presence of music in the audio file:\n')
+      print('**Start of the operation to separate music from the audio file:\n')
     
       remove_music2()
 
@@ -153,6 +153,7 @@ def predict(path,caption):
       if os.path.exists(audio_path):
         print('**Start of the STT operation:\n')
         resultl = modell.transcribe(audio_path)
+        os.system('rm -rf data/output')
       main_content=phrase2txt(resultl)
 
       checker=SpellCheck()
