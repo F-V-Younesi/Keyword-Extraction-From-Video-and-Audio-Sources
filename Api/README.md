@@ -55,8 +55,10 @@ def dummy_npwarn_decorator_factory():
 np._no_nep50_warning = getattr(np, '_no_nep50_warning', dummy_npwarn_decorator_factory)
 from perke.unsupervised.graph_based import TopicRank
 from flask import Flask, render_template, request
+# replace "AudioKeys" name in below line with api code version name, such as "AudioKeys_5M"
 from AudioKeys import *
 ```
+As said in the comment above, replace "AudioKeys" name with api code version name, such as "AudioKeys_5M"
 
 and then run app:
 ```
