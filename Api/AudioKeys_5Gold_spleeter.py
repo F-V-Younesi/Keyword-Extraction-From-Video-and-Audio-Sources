@@ -1,28 +1,3 @@
-import spleeter
-import moviepy.editor
-import io,os
-from pathlib import Path
-import select
-import subprocess as sp
-import sys
-from typing import Dict, Tuple, Optional, IO
-from pydub import AudioSegment, silence
-import librosa #, numpy as np
-from parsivar import SpellCheck
-import whisper
-import numpy as np
-import shutil
-import re
-def dummy_npwarn_decorator_factory():
-  def npwarn_decorator(x):
-    return x
-  return npwarn_decorator
-np._no_nep50_warning = getattr(np, '_no_nep50_warning', dummy_npwarn_decorator_factory)
-from perke.unsupervised.graph_based import TopicRank
-# from flask import Flask, render_template, request
-#from whispermodel import *
-
-
 #functions:
 #this function Investigate that the input file is audio or video or None of them:
 def is_video(path):
@@ -126,63 +101,6 @@ def remove_music():
     separate(in_path, out_path)
 
 
-# def music_length(overlay_music):
-# # myaudio = AudioSegment.from_mp3("/content/merged.mp3")
-#     silence1 = silence.detect_silence(overlay_music, min_silence_len=3000, silence_thresh=-40)
-#     silencelist = [((start/1000),(stop/1000)) for start,stop in silence1] #convert to sec
-#     c=0
-#     for i in range(0,len(silencelist)):
-#       c=c+silencelist[i][1]-silencelist[i][0]
-#     T=len(overlay_music)
-#     music_len=(T-c)/(T)
-#     return music_len
-#
-# def find_silense(y,total_numbers):
-#   zero_nums=0
-#   start=int(0.1*total_numbers)
-#   ending=int(0.9*total_numbers)
-#   for i in range(start,ending):
-#     if -0.002<y[i]<0.002:
-#       # y[i]=0
-#       zero_nums=zero_nums+1
-#   return zero_nums
-#
-# def content_finder(zeros,total_numbers):
-#   percent_zeros=zeros/total_numbers
-#   if percent_zeros<0.2:
-#     print('"\n **This Video/Audio basically contains Music and does not contain any useful contents."')
-#   else:
-#     print('"\n **This Video/Audio contains useful contents."')
-#
-# def music_mode(overlay_music,overlay_music_path,vocal):
-#   vocal_loudness=vocal.dBFS
-#   loudness=overlay_music.dBFS
-#   if loudness<-40:
-#     print('\n **This Video/Audio does not contain Music contents.')
-#     useful_content=True
-#     return useful_content
-#
-#   elif loudness<-30:
-#     print('\n **This Video/Audio contain background music on main contents that can influence on accuracy of results.')
-#     useful_content=True
-#     return useful_content
-#
-#   elif loudness>-18:
-#     if vocal_loudness<-30:
-#         print("\n **This Video/Audio contains Only Music and does not contain any useful contents.")
-#         useful_content=False
-#         return useful_content
-#     else:
-#         print("\n **This Video/Audio contains Music & singer's voice and does not contain any useful contents.")
-#         useful_content=False
-#         return useful_content
-#
-#   else:
-#     y, sr = librosa.load(overlay_music_path)
-#     total_numbers=len(y)
-#     zeros=find_silense(y,total_numbers)
-#     content_finder(zeros,total_numbers)
-
 def remove_music2():
   os.system('spleeter separate -o data/output/ data/Audio.mp3')
   
@@ -227,27 +145,8 @@ def predict(path,caption):
       os.rename(path,'data/Audio.mp3')
     if os.path.exists('data/Audio.mp3'):
       print('**Start of the operation to check the presence of music in the audio file:\n')
-      # !python3 -m pip install -U git+https://github.com/facebookresearch/demucs#egg=demucs
-      #model = "htdemucs"
-      #two_stems = None   # only separate one stems from the rest, for instance
-      ## two_stems = "vocals"
-      ## Options for the output audio:
-      #mp3 = True
-      #mp3_rate = 320
-      #float32 = False  # output as float 32 wavs, unsused if 'mp3' is True.
-      #int24 = False    # output as int24 wavs, unused if 'mp3' is True.
-      #in_path = '/content/demucs'
-      #out_path = '/content/demucs_separated/'
-      #remove_music()
-      ## !zip -r separated.zip separated
+    
       remove_music2()
-      # music1=AudioSegment.from_mp3('data/separated/htdemucs/Audio/bass.mp3')
-      # music2=AudioSegment.from_mp3('data/separated/htdemucs/Audio/drums.mp3')
-      # music3=AudioSegment.from_mp3('data/separated/htdemucs/Audio/other.mp3')
-      # vocal=AudioSegment.from_mp3('data/separated/htdemucs/Audio/vocals.mp3')
-      # overlay_music = music1.overlay(music2, position=0).overlay(music3, position=0)
-      # overlay_music.export('data/music.mp3',format='mp3')
-      # useful_content=music_mode(overlay_music,'data/music.mp3',vocal)
 
       modell = whisper.load_model("large")
       audio_path='data/output/Audio/vocals.wav'
