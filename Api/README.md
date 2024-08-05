@@ -36,7 +36,7 @@ https://drive.google.com/file/d/1uCh2S2wqUbTke5TH7cv9V3xLILlLsGW0/view?usp=shari
 **Third: Importing Libraries:**
 ```
 import moviepy.editor
-import io,os
+import io,os, re
 from pathlib import Path
 import select
 import subprocess as sp
