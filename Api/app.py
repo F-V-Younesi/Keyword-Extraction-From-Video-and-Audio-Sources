@@ -4,6 +4,12 @@
 # !python -m perke download
 # !python3 -m pip install -U git+https://github.com/facebookresearch/demucs#egg=demucs
 
+# @@@@ make following directory in local then download and copy onegram.pckl & mybigram_lm.pckl files in this directoy: @@@@
+# @@@@ this stage must be done after importing libraries.@@@@
+# !mkdir '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
+# !cp 'onegram.pckl' '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
+# !cp 'mybigram_lm.pckl' '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
+
 # Importing Libraries:
 import moviepy.editor
 import io,os
@@ -29,12 +35,6 @@ from flask import Flask, render_template, request
 #@@@@ change below module name to version code name:@@@@
 from AudioKeys import *
 
-# @@@@ make following directory in local then download and copy onegram.pckl & mybigram_lm.pckl files in this directoy: @@@@
-# @@@@ this stage must be done after importing libraries.@@@@
-# !mkdir '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
-# !cp 'onegram.pckl' '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
-# !cp 'mybigram_lm.pckl' '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
-
 
 app = Flask(__name__)
 
@@ -47,8 +47,8 @@ def main():
 @app.route("/submit", methods = ['GET', 'POST'])
 def get_output():
 	if request.method == 'POST':
-		text = request.form['text']
 		file = request.files['myfile']
+		text = request.form['text']
 		file_path = "static/" + file.filename	
 		file.save(file_path)
 		p = predict(file_path,text)
