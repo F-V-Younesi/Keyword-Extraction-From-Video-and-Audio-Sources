@@ -47,10 +47,11 @@ def main():
 @app.route("/submit", methods = ['GET', 'POST'])
 def get_output():
 	if request.method == 'POST':
+		text = request.form['text']
 		file = request.files['myfile']
 		file_path = "static/" + file.filename	
 		file.save(file_path)
-		p = predict(file_path)
+		p = predict(file_path,text)
 	return render_template("index.html", prediction = p, file_path = file_path)
 
 
