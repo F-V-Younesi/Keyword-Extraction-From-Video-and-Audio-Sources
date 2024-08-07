@@ -48,7 +48,7 @@ def main():
 def get_output():
 	if request.method == 'POST':
 		file = request.files['myfile']
-		text = request.form['text']
+		text = request.form['textarea']
 		file_path = "static/" + file.filename	
 		file.save(file_path)
 		p = predict(file_path,text)
