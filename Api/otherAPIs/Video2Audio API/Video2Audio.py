@@ -27,5 +27,6 @@ def predict(path):
     format=is_video(path)
     if format is True:
       vid2audio(path)
+      return "Convertion Done!"
     else:
       return format
