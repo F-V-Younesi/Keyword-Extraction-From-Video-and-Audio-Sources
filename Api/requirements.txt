@@ -7,5 +7,5 @@ parsivar==0.2.3.1
 perke==0.4.4
 pathlib==1.0.1
 Flask==2.2.5
-typing
 spleeter==2.4.0
+typing
