@@ -1,0 +1,4 @@
+numpy
+perke==0.4.4
+pathlib==1.0.1
+Flask==2.2.5
