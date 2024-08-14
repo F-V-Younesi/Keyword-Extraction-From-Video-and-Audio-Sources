@@ -21,12 +21,6 @@
       <div class="col-sm-10">
         <input type="file" class="form-control" placeholder="video/audio file"  name="myfile" id="pwd">
       </div>
-      <br>
-      <br>
-      <label class="control-label col-sm-2" for="pwd">Enter Caption text (optional):</label>
-      <div class="col-sm-10">
-        <textarea name="textarea" Cols="100"></textarea>
-      </div>
     </div>
 
 
@@ -37,10 +31,17 @@
     </div>
   </form>
 
-	{% if prediction %}
-	<h2> Predicted Keywords   : <i> {{prediction}} </i></h2>
+    {% if prediction %}
+    <audio controls>
+      	<source src="output/Audio/vocals.wav" type="audio/wav">
+    </audio>
 
-	{% endif %}
+    <audio controls>
+      	<source src="output/Audio/accompaniment.wav" type="audio/wav">
+    </audio>
+    <h2> Result : <i> {{prediction}} </i></h2>
+
+    {% endif %}
 
 </div>
 
