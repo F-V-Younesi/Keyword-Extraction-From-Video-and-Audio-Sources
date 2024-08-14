@@ -1,7 +1,12 @@
 from pathlib import Path
 from flask import Flask, render_template, request
-from parsivar import SpellCheck
-from SpellCorrection import *
+def dummy_npwarn_decorator_factory():
+  def npwarn_decorator(x):
+    return x
+  return npwarn_decorator
+np._no_nep50_warning = getattr(np, '_no_nep50_warning', dummy_npwarn_decorator_factory)
+from perke.unsupervised.graph_based import TopicRank
+from KeywordExtraction import *
 
 
 app = Flask(__name__)
