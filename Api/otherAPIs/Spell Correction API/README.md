@@ -27,16 +27,13 @@ https://drive.google.com/file/d/1uCh2S2wqUbTke5TH7cv9V3xLILlLsGW0/view?usp=shari
 !cp 'onegram.pckl' '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
 !cp 'mybigram_lm.pckl' '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
 ```
-**Third: Importing Libraries:**
+**Third: Run app.py :**
 ```
 from pathlib import Path
 from parsivar import SpellCheck
 from flask import Flask, render_template, request
 from SpellCorrection import *
-```
 
-and then run app:
-```
 app = Flask(__name__)
 
 # routes
