@@ -33,7 +33,7 @@ https://drive.google.com/file/d/1uCh2S2wqUbTke5TH7cv9V3xLILlLsGW0/view?usp=shari
 !cp 'onegram.pckl' '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
 !cp 'mybigram_lm.pckl' '/usr/local/lib/python3.10/dist-packages/parsivar/resource/spell'
 ```
-**Third: Importing Libraries:**
+**Third: Run app.py :**
 ```
 import moviepy.editor
 import io,os, re
@@ -57,18 +57,7 @@ from perke.unsupervised.graph_based import TopicRank
 from flask import Flask, render_template, request
 # replace "AudioKeys" name in below line with api code version name, such as "AudioKeys_5M"
 from AudioKeys import *
-```
-As said in the comment above, replace "AudioKeys" name with api code version name, such as "AudioKeys_5M"
 
-**Versions:**
-1. **6Gold_spleeter_mp3** : The best model(in accuracy) for the case where the presence of useful content and music in the input is not known.
-2. **5Gold_spleeter** : The best model(in accuracy) for the case where the presence of music in the input is not known but we know that inuputs certainly have useful contents, for example: Audio of lectures or meetings.
-3. **5Medium** : The best model(in accuracy) for the case where the presence of useful content in the input is known and input has not music in background. also can use for upper cases with less accuracy but faster implementation.
-4. **4Light** : good for all of cases, but has lowest accuracy but fastest in implemetation.
-
-
-and then run app:
-```
 app = Flask(__name__)
 
 # routes
@@ -93,3 +82,11 @@ if __name__ =='__main__':
 	app.run(debug = True)
 
 ```
+
+As said in the comment above, replace "AudioKeys" name with api code version name, such as "AudioKeys_5M"
+
+**Versions:**
+1. **6Gold_spleeter_mp3** : The best model(in accuracy) for the case where the presence of useful content and music in the input is not known.
+2. **5Gold_spleeter** : The best model(in accuracy) for the case where the presence of music in the input is not known but we know that inuputs certainly have useful contents, for example: Audio of lectures or meetings.
+3. **5Medium** : The best model(in accuracy) for the case where the presence of useful content in the input is known and input has not music in background. also can use for upper cases with less accuracy but faster implementation.
+4. **4Light** : good for all of cases, but has lowest accuracy but fastest in implemetation.
