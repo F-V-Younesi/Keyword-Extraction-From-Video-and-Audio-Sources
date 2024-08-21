@@ -19,7 +19,7 @@ As shown above, the directory with files and folders with same names must be cre
 !conda install conda-forge::ffmpeg
 ```
 
-**Second: Importing Libraries:**
+**Second: and then run app:**
 ```
 import io,os, re
 from pathlib import Path
@@ -29,10 +29,7 @@ import numpy as np
 from flask import Flask, render_template, request
 # replace "AudioKeys" name in below line with api code version name, such as "AudioKeys_5M"
 from ContentRecognition import *
-```
 
-**Third: and then run app:**
-```
 app = Flask(__name__)
 
 # routes
